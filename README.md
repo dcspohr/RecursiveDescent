@@ -5,7 +5,7 @@ Python recursive descent parser, supports 3 basic types: Integers, decimals, and
 Integers are non-empty sequences of digits optionally preceded with either a ‘+’ or ‘-’ sign.\
 Decimal numbers are Integers followed by a ‘.’, followed by a non-empty sequence of digits.\
 Strings are any non-space sequences of characters enclosed in “”, e.g. “hello” “abc123”.\
-Keywords are the following strings: :=, +, -, *, /, OR, AND, ~, (, ), <, >, = , #, ;, PRINT, IF, ELSE, ENDIF, WHILE, ENDW, PROC, RETURN,  BEGIN, END.  (Notice: keywords are uppercase)\
+Keywords are the following strings: :=, +, -, *, /, OR, AND, ~, (, ), <, >, = , #, ;, PRINT, IF, ELSE, ENDIF, WHILE, ENDW, PROC, RETURN,  BEGIN, END.  (Note: keywords are uppercase)\
 Identifiers are sequences of digits or letters. The first character must be a letter, and an identifier cannot be a Keyword. \
 Tokens are always separated by white-spaces.
 
