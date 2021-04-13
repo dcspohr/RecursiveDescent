@@ -1,5 +1,5 @@
 # RecursiveDescent
-Python recursive descent parser
+Python recursive descent parser, supports 3 basic types: Integers, decimals, and strings; and has common control structures like loops and conditional statements. 
 
 # Tokens
 Integers are non-empty sequences of digits optionally preceded with either a ‘+’ or ‘-’ sign.
