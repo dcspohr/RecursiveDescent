@@ -1,0 +1,52 @@
+PROC isRelation ( s )
+BEGIN
+  IF ( ( s = "<" ) OR ( s = ">" ) OR
+       ( s = "=" ) OR ( s = "#" ) )
+     RETURN true   
+  ENDIF
+  RETURN false 
+END.
+
+
+PROC isExpression ( )
+BEGIN
+  isSimpleExpression ( ) ;
+  IF ( isRelation ( token ) )
+    getToken ( ) ;
+    isSimpleExtression ( )     
+  ENDIF
+END.
+
+
+
+PROC isSimpleExpression ( )
+BEGIN
+  isTerm ( ) ;
+  WHILE ( isAddOperator ( token ) )
+    getToken ( ) ;
+    isTerm ( ) ;
+  ENDW
+END.
+
+FUNC isIfStatement ( )
+BEGIN
+  IF ( token = "IF" )
+    getToken ( ) ;
+    IF ( token = "(" )
+      getToken ( ) ;
+      isExpression ( ) ;
+      IF ( token = ")" )
+        getToken ( ) ;
+        isStatementSequence ( ) ;
+        IF ( token = "ELSE" )
+          getToken ( ) ;
+          isStatementSequence ( ) ;
+        ELSE 
+          IF ( token = "ENDW" )
+            getToken ( ) !
+          ENDIF   
+        ENDIF
+      ENDIF
+    ENDIF
+  ENDIF
+END.
